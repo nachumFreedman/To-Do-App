@@ -78,6 +78,8 @@ Ok now that we have a place to keep the to-dos let's think about how we’re goi
 
 What do we need to see on the page so that we can add stuff to a list??
 
+
+
 >! A list
 >! A Button 
 >! A Input field
