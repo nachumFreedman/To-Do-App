@@ -1,6 +1,52 @@
 # INTRODUCING REACT TO-DOs:
 
+##  getting the app running 
+
 In your text editor open folder ```home/to-do-list``` or search for to-do-list 
+
+windows users will need to download (GitBash)[https://git-scm.com/downloads] before installing the app
+
+
+Everyone will need (node)[https://nodejs.org/en/]
+
+
+Windows users please follow these instructions:
+Click the "Start >> Program Files >> Accessories >> Command Prompt" to open a Command Prompt session using just your mouse. Click the "Start" button and type "cmd." Right-click "Cmd," select "Runas Administrator" and click "Yes" to open Command Prompt with elevated privileges.
+And enter in your terminal (without the dollar):
+
+
+```
+$npm install -g create-react-app
+$create-react-app to-do-list
+$ cd to-do-list
+$sudo npm i
+```
+(Stuck? heres some help)[https://www.computerhope.com/issues/chusedos.htm (edited)]
+
+
+For mac:
+Instructions on opening the terminal: (
+  In your finder go into applications and open terminal
+) or (Control + Option + Shift + T)
+(stuck heres some help for you mac users)[https://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line]
+
+Enter into your command line: (without the dolor)
+
+
+```
+$mkdir code
+$sudo npm install -g create-react-app
+$sudo create-react-app to-do-list
+$ cd to-do-list
+$ sudo npm i
+```
+
+
+for Mac or Linux:
+Now go into your text editor (atom) and open that folder!
+I also recommend learning how to use bash
+(Learn bash!)[https://codeburst.io/navigate-through-your-computer-using-only-these-7-terminal-commands-94ee9bbb4028]
+
 
 ## Explanation of JavaScript, HTML, CSS & React
 
@@ -19,12 +65,6 @@ CSS describes what the page should look like.
 So today we’re going to learn how to write a To-Do-List in React.Js, which is a framework for writing JavaScript. Frameworks help us organise and standardise our code, so we can get more done.
 
 
-This is how you would write a to do list in Vanilla (Vanilla refers to writing just JavaScript without using any frameworks). As you can see, we have JS in our HTML (in the onclick), and HTML in our JS (in our newListItem function), which is going to make it difficult to debug or add features.
-
-``` put the vanila code here```
-
-You can easily split this into different files to make it look a little cleaner but what you can’t do without a whole bunch of work is make it efficient and accurate to render on the screen, hence React. React will do a whole bunch of organisation using something called a virtual dom. The virtual dom let’s us write clean code which is still efficient
-
 So does everyone have their ```To-Do-List folder```? Great! 
 (in your text editor click open and search for to-do-list)
 
@@ -35,7 +75,7 @@ You should inside the ```render()```  function (towards the bottom of ```App.JS`
 You should delete: 
 
 
-<sub></sub>
+<sub>App.JS</sub>
 ```html
 <div className="App">
  <header className="App-header">
@@ -55,6 +95,7 @@ You should delete:
 Please add
 
 
+<sub>App.JS</sub>
 ```html
 <div>hello TLV</div>
 ```
@@ -78,6 +119,8 @@ The state is a place to keep all the information in the app that changes. The re
 
 
 So below the component declarations lets copy in a state with an empty list for your to-dos 
+
+<sub>App.JS</sub>
 ```js
 state =  { 
  toDos: [ ],
@@ -92,18 +135,21 @@ Ok now that we have a place to keep the to-dos let's think about how we’re goi
 <summary>
 What do we need to see on the page so that we can add stuff to a list??
 </summary>
-<p>
+<pre>
  A list
+
  A Button 
+
  A Input field
-</p>
+</pre>
 </details>
 
 
 Ok so let’s get started. Underneath the Hello TLV we want to add a button, a input box and a list so that we can add to-do’s to it.
 
 Copy paste this: 
-```js
+<sub>App.JS</sub>
+```html
 render() { 
  return (
   <div>
@@ -119,6 +165,8 @@ render() {
 
 
 Anyone with any experience in HTML should notice something wrong here. 
+
+There's no such thing as a ```<List/>```
 
 
 That’s because in react we use components to split apart our code and make it way more readable.
@@ -137,6 +185,7 @@ In your finder or where ever you are most comfortable creating files go to code/
 Inside this file we’re going to write the list setup!
 
 
+<sub>List.JS</sub>
 ```js
 import React from 'react';
  const List = props => (
@@ -166,7 +215,10 @@ One reason is because we haven’t even passed it any “props” and the other 
 
 Props simply means properties and we can pass it whichever properties we want when we call our new component, so in our src/App.js lets pass it the necessary props so that we can get it to print some “List Items” or ```<li>Items</li>``` on the page.
 
-```js
+
+
+<sub>App.JS</sub>
+```html
 render() { 
  return (
   <div>
@@ -182,6 +234,8 @@ render() {
 Now in our state object at the top of the file underneath the class function  (WHERE IS STATE) lets add a few toDos’ so we can see it working… 
 
 
+
+<sub>App.JS</sub>
 ```js
 toDos: ["your homework", "drink water", "light Chanukia"]
 ```
@@ -197,7 +251,9 @@ Let’s quickly add a done button so we can remove items from the list.
 In the ```src/App.js``` lets add a new prop to our list component which, when called call a function so that we can remove an item from our state.toDos.
 
 
-```js
+
+<sub>App.JS</sub>
+```html
 render() { 
  return (
   <div>
@@ -213,6 +269,7 @@ render() {
 And inside our  ```src/List.js```  Lets add a button that will call this prop with the index of the item the user wants to delete, like this: 
 
 
+<sub>List.JS</sub>
 ```js
 import React from 'react'
  const List = props => (
@@ -234,6 +291,7 @@ export default List;
 Now in our  ```src/App.js```  above the render function lets add the function we’re going to call when the user clicks that delete button.
 
 
+<sub>App.JS</sub>
 ```js
 deleteItem = (index) =>
  this.setState({
@@ -250,7 +308,9 @@ Now let’s get that input field working.. To explain we have an input field and
 So first let’s add this to our input
 
 
-```js
+
+<sub>App.JS</sub>
+```html
 render() { 
  return (
   <div>
@@ -274,6 +334,7 @@ And because in the onChange we need to call a function so we can save it, let's 
 Anywhere underneath the stateAdd this function: 
 
 
+<sub>App.JS</sub>
 ```js
 setNextToDo = (event) => {
   this.setState({ nextToDo: event.target.value})
@@ -288,13 +349,16 @@ Now we want to write the functionality for our input box.
 Inside the render, let's add a function call to the onClick attribute.
 
 
+<sub>App.JS</sub>
 ```html
-onClick={this.addToDo}
+<button onClick={this.addToDo}></button>
 ```
 
 
 Whenever the user clicks the button it’s going to a call a function called addToDo.
 
+
+<sub>App.JS</sub>
 ```js
 addToDp = (event) => 
  this.setState({
