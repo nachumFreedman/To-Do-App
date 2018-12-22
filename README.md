@@ -31,7 +31,7 @@ $ npm i
 Instructions on opening the terminal: (
   In your finder go into applications and open terminal
 ) or (Control + Option + Shift + T)
-(stuck heres some help for you mac users)[https://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line]
+[stuck heres some help for you mac users](https://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line)
 
 Enter into your command line: (without the dolor)
 
@@ -157,7 +157,7 @@ Ok so let’s get started. Underneath the Hello TLV we want to add a button, a i
 Copy paste this: 
 
 
-<sub>App.JS</sub>
+<sub>App.js</sub>
 ```html
 render() { 
  return (
@@ -194,7 +194,7 @@ In your finder or where ever you are most comfortable creating files go to code/
 Inside this file we’re going to write the list setup!
 
 
-<sub>List.JS</sub>
+<sub>List.js</sub>
 ```js
 import React from 'react';
  const List = props => (
@@ -226,7 +226,7 @@ Props simply means properties and we can pass it whichever properties we want wh
 
 
 
-<sub>App.JS</sub>
+<sub>App.js</sub>
 ```html
 render() { 
  return (
@@ -244,7 +244,7 @@ Now in our state object at the top of the file underneath the class function  (W
 
 
 
-<sub>App.JS</sub>
+<sub>App.js</sub>
 ```js
 toDos: ["your homework", "drink water", "light Chanukia"]
 ```
@@ -261,7 +261,7 @@ In the ```src/App.js``` lets add a new prop to our list component which, when ca
 
 
 
-<sub>App.JS</sub>
+<sub>App.js</sub>
 ```html
 render() { 
  return (
@@ -278,7 +278,7 @@ render() {
 And inside our  ```src/List.js```  Lets add a button that will call this prop with the index of the item the user wants to delete, like this: 
 
 
-<sub>List.JS</sub>
+<sub>List.js</sub>
 ```js
 import React from 'react'
  const List = props => (
@@ -300,7 +300,7 @@ export default List;
 Now in our  ```src/App.js```  above the render function lets add the function we’re going to call when the user clicks that delete button.
 
 
-<sub>App.JS</sub>
+<sub>App.js</sub>
 ```js
 deleteItem = (index) =>
  this.setState({
@@ -318,7 +318,7 @@ So first let’s add this to our input
 
 
 
-<sub>App.JS</sub>
+<sub>App.js</sub>
 ```html
 render() { 
  return (
@@ -343,7 +343,7 @@ And because in the onChange we need to call a function so we can save it, let's 
 Anywhere underneath the stateAdd this function: 
 
 
-<sub>App.JS</sub>
+<sub>App.js</sub>
 ```js
 setNextToDo = (event) => {
   this.setState({ nextToDo: event.target.value})
@@ -358,7 +358,7 @@ Now we want to write the functionality for our input box.
 Inside the render, let's add a function call to the onClick attribute.
 
 
-<sub>App.JS</sub>
+<sub>App.js</sub>
 ```html
 <button onClick={this.addToDo}></button>
 ```
@@ -367,7 +367,7 @@ Inside the render, let's add a function call to the onClick attribute.
 Whenever the user clicks the button it’s going to a call a function called addToDo.
 
 
-<sub>App.JS</sub>
+<sub>App.js</sub>
 ```js
 addToDp = (event) => 
  this.setState({
