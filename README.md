@@ -2,12 +2,10 @@
 
 ##  getting the app running 
 
-In your text editor open folder ```home/to-do-list``` or search for to-do-list 
-
-windows users will need to download (GitBash)[https://git-scm.com/downloads] before installing the app
+windows users will need to download [GitBash](https://git-scm.com/downloads) before installing the app
 
 
-Everyone will need (node)[https://nodejs.org/en/]
+Everyone will need [node](https://nodejs.org/en/)
 
 
 ### Windows users 
@@ -19,12 +17,12 @@ And enter in your terminal (without the dollar):
 
 
 ```
-$npm install -g create-react-app
-$create-react-app to-do-list
+$ npm install -g create-react-app
+$ create-react-app to-do-list
 $ cd to-do-list
-$sudo npm i
+$ npm i
 ```
-(Stuck? heres some help)[https://www.computerhope.com/issues/chusedos.htm (edited)]
+[Stuck? heres some help](https://www.computerhope.com/issues/chusedos.htm (edited))
 
 
 ### For mac:
@@ -39,19 +37,21 @@ Enter into your command line: (without the dolor)
 
 
 ```
-$mkdir code
-$sudo npm install -g create-react-app
-$sudo create-react-app to-do-list
+$ mkdir code
+$ npm install -g create-react-app
+$ create-react-app to-do-list
 $ cd to-do-list
-$ sudo npm i
+$ npm i
 ```
 
 
 for Mac or Linux:
 Now go into your text editor (atom) and open that folder!
 I also recommend learning how to use bash
-(Learn bash!)[https://codeburst.io/navigate-through-your-computer-using-only-these-7-terminal-commands-94ee9bbb4028]
+[Learn bash!](https://codeburst.io/navigate-through-your-computer-using-only-these-7-terminal-commands-94ee9bbb4028)
 
+
+In your text editor open folder ```home/to-do-list``` or search for to-do-list 
 
 ## Explanation of JavaScript, HTML, CSS & React
 
@@ -100,7 +100,7 @@ You should delete:
 Please add
 
 
-<sub>App.JS</sub>
+<sub>App.js</sub>
 ```html
 <div>hello TLV</div>
 ```
@@ -125,7 +125,7 @@ The state is a place to keep all the information in the app that changes. The re
 
 So below the component declarations lets copy in a state with an empty list for your to-dos 
 
-<sub>App.JS</sub>
+<sub>App.js</sub>
 ```js
 state =  { 
  toDos: [ ],
@@ -143,9 +143,11 @@ What do we need to see on the page so that we can add stuff to a list??
 <pre>
  A list
 
+
  A Button 
 
- A Input field
+
+ An Input field
 </pre>
 </details>
 
@@ -153,6 +155,8 @@ What do we need to see on the page so that we can add stuff to a list??
 Ok so let’s get started. Underneath the Hello TLV we want to add a button, a input box and a list so that we can add to-do’s to it.
 
 Copy paste this: 
+
+
 <sub>App.JS</sub>
 ```html
 render() { 
