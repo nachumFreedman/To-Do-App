@@ -8,7 +8,9 @@ In your text editor open folder ```home/to-do-list``` or search for to-do-list
 HTML can be described as a noun just like JavaScript can be described as a verb and CSS, the styling language can be described as an Adjective. 
 
 
-##Meaning 
+###  Meaning 
+
+
 HTML describes what will be on the page.
 JavaScript tells the page what to do.
 CSS describes what the page should look like.
@@ -35,16 +37,15 @@ You should delete:
 
 ```html
 <div className="App">
-<header className="App-header">
-<img src={logo} className="App-logo" alt="logo" />
-<p> Edit <code>src/App.js</code> and save to reload. </p>
-<a className="App-link"
-href="https://reactjs.org"
-target="_blank"
-rel="noopener noreferrer">
-Learn React
-</a>
-</header>
+ <header className="App-header">
+  <img src={logo} className="App-logo" alt="logo" />
+  <p> Edit <code>src/App.js</code> and save to reload. </p>
+  <a className="App-link"
+   href="https://reactjs.org"
+   target="_blank"
+   rel="noopener noreferrer">
+  </a>
+ </header>
 </div> 
 ```
 
@@ -78,7 +79,7 @@ The state is a place to keep all the information in the app that changes. The re
 So below the component declarations lets copy in a state with an empty list for your to-dos 
 ```js
 state =  { 
-toDos: [ ]
+ toDos: [ ],
 };
 ```
 
@@ -103,14 +104,14 @@ Ok so let’s get started. Underneath the Hello TLV we want to add a button, a i
 Copy paste this: 
 ```js
 render() { 
-Return (
-<div>
-Hello TLV
-<input/>
-<button>submit</button>
-<List/>
-</div>
-);
+ Return (
+  <div>
+   Hello TLV
+   <input/>
+   <button>submit</button>
+   <List/>
+  </div>
+ );
 } 
 ```
 
@@ -136,18 +137,18 @@ Inside this file we’re going to write the list setup!
 
 
 ```js
-Import React from 'react';
-Const List = props => (
-<ul>
-{
-props.toDos.map((item, index) => (
-<li key={index}>
-{item}
-</li>
-))
-}
-</ul>
-);
+import React from 'react';
+ Const List = props => (
+  <ul>
+   {
+    props.toDos.map((item, index) => (
+     <li key={index}>
+      {item}
+     </li>
+    ))
+   }
+  </ul>
+ );
 Export default List;
 ```
 
@@ -166,14 +167,14 @@ Props simply means properties and we can pass it whichever properties we want wh
 
 ```js
 render() { 
-Return (
-<div>
-Hello TLV
-<input/> 
-<button>submit</button>
-<List toDos={this.state.toDos} />
-</div>
-);
+ Return (
+  <div>
+   Hello TLV
+   <input/> 
+   <button>submit</button>
+   <List toDos={this.state.toDos} />
+  </div>
+ );
 } 
 ```
 
@@ -197,14 +198,14 @@ In the ```src/App.js``` lets add a new prop to our list component which, when ca
 
 ```js
 render() { 
-Return (
-<div>
-Hello TLV
-<input/> 
-<button>submit</button>
-<List<List toDos={this.state.toDos} deleteItem={this.deleteItem}/>
-</div>
-);
+ Return (
+  <div>
+   Hello TLV
+   <input/> 
+   <button>submit</button>
+   <List<List toDos={this.state.toDos} deleteItem={this.deleteItem}/>
+  </div>
+ );
 } 
 ```
 
@@ -212,18 +213,18 @@ And inside our  ```src/List.js```  Lets add a button that will call this prop wi
 
 
 ```js
-Import React from 'react'
-Const List = props => (
-<ul>
-{
-props.toDos.map((item, index) => (
-<li key={index}>
-{item}
-<button onClick={()=>props.deleteItem(index)}>Delete</button>
-</li>
-))
-}
-</ul>
+import React from 'react'
+ Const List = props => (
+  <ul>
+   {
+    props.toDos.map((item, index) => (
+     <li key={index}>
+      {item}
+      <button onClick={()=>props.deleteItem(index)}>Delete</button>
+     </li>
+    ))
+   }
+ </ul>
 );
 Export default List;
 
@@ -234,10 +235,9 @@ Now in our  ```src/App.js```  above the render function lets add the function we
 
 ```js
 deleteItem = (index) =>
-this.setState({
-toDos: this.state.toDos.filter((_, 
-i)=> (i !== index))
-})
+ this.setState({
+  toDos: this.state.toDos.filter((_, i)=> (i !== index))
+ })
 ```
 
 This function will go through the toDos in our state and filter each one to find the index (location in the list) and when it finds the to do with the same index as the one we pass to the function on the button it will filter it out of the list.  (in the real world, we’d likely have item.id to filter by… this “index” might break if we have sorting on the List.items)
@@ -251,14 +251,14 @@ So first let’s add this to our input
 
 ```js
 render() { 
-Return (
-<div>
-Hello TLV
-<input value={this.state.nextToDo} onChange={this.setNextToDo}/> 
-<button>submit</button>
-<List<List toDos={this.state.toDos} deleteItem={this.deleteItem}/>
-</div>
-);
+ Return (
+  <div>
+   Hello TLV
+   <input value={this.state.nextToDo} onChange={this.setNextToDo}/> 
+   <button>submit</button>
+   <List<List toDos={this.state.toDos} deleteItem={this.deleteItem}/>
+  </div>
+ );
 } 
 ```
 
@@ -275,7 +275,7 @@ Anywhere underneath the stateAdd this function:
 
 ```js
 setNextToDo = (event) => {
- this.setState({ nextToDo: event.target.value})
+  this.setState({ nextToDo: event.target.value})
 }
 ```
 
