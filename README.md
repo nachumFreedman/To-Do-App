@@ -22,7 +22,7 @@ $ create-react-app to-do-list
 $ cd to-do-list
 $ npm i
 ```
-[Stuck? heres some help](https://www.computerhope.com/issues/chusedos.htm (edited))
+[Learn Bash](https://www.computerhope.com/issues/chusedos.htm (edited))
 
 
 ### For mac:
@@ -45,8 +45,6 @@ $ npm i
 ```
 
 
-for Mac or Linux:
-Now go into your text editor (atom) and open that folder!
 I also recommend learning how to use bash
 [Learn bash!](https://codeburst.io/navigate-through-your-computer-using-only-these-7-terminal-commands-94ee9bbb4028)
 
@@ -80,7 +78,7 @@ You should inside the ```render()```  function (towards the bottom of ```App.JS`
 You should delete: 
 
 
-<sub>App.JS</sub>
+<sub>App.js</sub>
 ```html
 <div className="App">
  <header className="App-header">
@@ -111,7 +109,7 @@ Check progress in your browser by running.
 Inside your terminal from your project root
 
 
-You should see inside your browser by going to the address “localhost:3000” just like typing in a website the text Hello TLV!
+You should see inside your browser by going to the address [localhost:3000](http://localhost:3000) just like typing in a website the text Hello TLV!
 
 
 Congratulations on your first React App!
@@ -165,7 +163,7 @@ render() {
    Hello TLV
    <input/>
    <button>submit</button>
-   <List/>
+   <List toDos={this.state.toDos}/>
   </div>
  );
 } 
@@ -269,7 +267,7 @@ render() {
    Hello TLV
    <input/> 
    <button>submit</button>
-   <List<List toDos={this.state.toDos} deleteItem={this.deleteItem}/>
+   <List toDos={this.state.toDos} deleteItem={this.deleteItem}/>
   </div>
  );
 } 
