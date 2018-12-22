@@ -31,7 +31,7 @@ $ npm i
 Instructions on opening the terminal: (
   In your finder go into applications and open terminal
 ) or (Control + Option + Shift + T)
-[stuck heres some help for you mac users](https://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line)
+[stuck? heres some help for you mac users](https://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line)
 
 Enter into your command line: (without the dolor)
 
