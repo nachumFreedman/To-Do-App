@@ -75,15 +75,16 @@ toDos: [ ]
 
 Ok now that we have a place to keep the to-dos let's think about how we’re going to fill it. 
 
-
+<details>
+<summary>
 What do we need to see on the page so that we can add stuff to a list??
-
-
-
->! A list
->! A Button 
->! A Input field
-
+</summary>
+<p>
+ A list
+ A Button 
+ A Input field
+</p>
+</details>
 
 Ok so let’s get started. Underneath the Hello TLV we want to add a button, a input box and a list so that we can add to-do’s to it.
 
