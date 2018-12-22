@@ -70,10 +70,12 @@ The state is a place to keep all the information in the app that changes. The re
 So below the component declarations lets copy in a state with an empty list for your to-dos 
 ```state =  { 
 toDos: [ ]
-};```
+};
+```
 
 
 Ok now that we have a place to keep the to-dos let's think about how we’re going to fill it. 
+
 
 <details>
 <summary>
@@ -89,7 +91,8 @@ What do we need to see on the page so that we can add stuff to a list??
 Ok so let’s get started. Underneath the Hello TLV we want to add a button, a input box and a list so that we can add to-do’s to it.
 
 Copy paste this: 
-```render() { 
+```
+render() { 
 Return (
 <div>
 Hello TLV
@@ -100,6 +103,7 @@ Hello TLV
 );
 } 
 ```
+
 
 
 Anyone with any experience in HTML should notice something wrong here. 
