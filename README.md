@@ -10,7 +10,10 @@ windows users will need to download (GitBash)[https://git-scm.com/downloads] bef
 Everyone will need (node)[https://nodejs.org/en/]
 
 
-Windows users please follow these instructions:
+### Windows users 
+
+
+please follow these instructions:
 Click the "Start >> Program Files >> Accessories >> Command Prompt" to open a Command Prompt session using just your mouse. Click the "Start" button and type "cmd." Right-click "Cmd," select "Runas Administrator" and click "Yes" to open Command Prompt with elevated privileges.
 And enter in your terminal (without the dollar):
 
@@ -24,7 +27,9 @@ $sudo npm i
 (Stuck? heres some help)[https://www.computerhope.com/issues/chusedos.htm (edited)]
 
 
-For mac:
+### For mac:
+
+
 Instructions on opening the terminal: (
   In your finder go into applications and open terminal
 ) or (Control + Option + Shift + T)
