@@ -35,6 +35,7 @@ You should inside the ```render()```  function (towards the bottom of ```App.JS`
 You should delete: 
 
 
+<sub></sub>
 ```html
 <div className="App">
  <header className="App-header">
@@ -104,7 +105,7 @@ Ok so let’s get started. Underneath the Hello TLV we want to add a button, a i
 Copy paste this: 
 ```js
 render() { 
- Return (
+ return (
   <div>
    Hello TLV
    <input/>
@@ -138,7 +139,7 @@ Inside this file we’re going to write the list setup!
 
 ```js
 import React from 'react';
- Const List = props => (
+ const List = props => (
   <ul>
    {
     props.toDos.map((item, index) => (
@@ -149,7 +150,7 @@ import React from 'react';
    }
   </ul>
  );
-Export default List;
+export default List;
 ```
 
 This will allow us to render as many to-do items as we want because it maps over all the “toDos” in our state and makes a new list item for each one.
@@ -167,7 +168,7 @@ Props simply means properties and we can pass it whichever properties we want wh
 
 ```js
 render() { 
- Return (
+ return (
   <div>
    Hello TLV
    <input/> 
@@ -198,7 +199,7 @@ In the ```src/App.js``` lets add a new prop to our list component which, when ca
 
 ```js
 render() { 
- Return (
+ return (
   <div>
    Hello TLV
    <input/> 
@@ -214,7 +215,7 @@ And inside our  ```src/List.js```  Lets add a button that will call this prop wi
 
 ```js
 import React from 'react'
- Const List = props => (
+ const List = props => (
   <ul>
    {
     props.toDos.map((item, index) => (
@@ -226,7 +227,7 @@ import React from 'react'
    }
  </ul>
 );
-Export default List;
+export default List;
 
 ```
 
@@ -251,7 +252,7 @@ So first let’s add this to our input
 
 ```js
 render() { 
- Return (
+ return (
   <div>
    Hello TLV
    <input value={this.state.nextToDo} onChange={this.setNextToDo}/> 
