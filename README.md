@@ -31,7 +31,9 @@ So inside your text editor(I told everyone to download Atom but you can use whic
 .
 You should inside the ```render()```  function (towards the bottom of ```App.JS```), see some stuff that looks like HTML (the code with ```<>``` ), because the create-react-app gives you an already built page let’s go ahead and delete some of the unnecessary code, and we should add a 
 You should delete: 
-``` 
+
+
+```html
 <div className="App">
 <header className="App-header">
 <img src={logo} className="App-logo" alt="logo" />
@@ -46,8 +48,14 @@ Learn React
 </div> 
 ```
 
+
+
 Please add
-```<div>hello TLV</div>```
+
+
+```html
+<div>hello TLV</div>
+```
 
 
 Check progress in your browser by running. 
@@ -68,7 +76,8 @@ The state is a place to keep all the information in the app that changes. The re
 
 
 So below the component declarations lets copy in a state with an empty list for your to-dos 
-```state =  { 
+```js
+state =  { 
 toDos: [ ]
 };
 ```
@@ -88,10 +97,11 @@ What do we need to see on the page so that we can add stuff to a list??
 </p>
 </details>
 
+
 Ok so let’s get started. Underneath the Hello TLV we want to add a button, a input box and a list so that we can add to-do’s to it.
 
 Copy paste this: 
-```
+```js
 render() { 
 Return (
 <div>
@@ -125,8 +135,8 @@ In your finder or where ever you are most comfortable creating files go to code/
 Inside this file we’re going to write the list setup!
 
 
-```
-Import React from 'react'
+```js
+Import React from 'react';
 Const List = props => (
 <ul>
 {
@@ -154,7 +164,7 @@ One reason is because we haven’t even passed it any “props” and the other 
 
 Props simply means properties and we can pass it whichever properties we want when we call our new component, so in our src/App.js lets pass it the necessary props so that we can get it to print some “List Items” or ```<li>Items</li>``` on the page.
 
-```
+```js
 render() { 
 Return (
 <div>
@@ -170,7 +180,9 @@ Hello TLV
 Now in our state object at the top of the file underneath the class function  (WHERE IS STATE) lets add a few toDos’ so we can see it working… 
 
 
-```toDos: ["your homework", "drink water", "light Chanukia"]```
+```js
+toDos: ["your homework", "drink water", "light Chanukia"]
+```
 
 
 
@@ -183,7 +195,7 @@ Let’s quickly add a done button so we can remove items from the list.
 In the ```src/App.js``` lets add a new prop to our list component which, when called call a function so that we can remove an item from our state.toDos.
 
 
-```
+```js
 render() { 
 Return (
 <div>
@@ -199,7 +211,7 @@ Hello TLV
 And inside our  ```src/List.js```  Lets add a button that will call this prop with the index of the item the user wants to delete, like this: 
 
 
-```
+```js
 Import React from 'react'
 Const List = props => (
 <ul>
@@ -220,7 +232,7 @@ Export default List;
 Now in our  ```src/App.js```  above the render function lets add the function we’re going to call when the user clicks that delete button.
 
 
-```
+```js
 deleteItem = (index) =>
 this.setState({
 toDos: this.state.toDos.filter((_, 
@@ -237,7 +249,7 @@ Now let’s get that input field working.. To explain we have an input field and
 So first let’s add this to our input
 
 
-```
+```js
 render() { 
 Return (
 <div>
@@ -261,7 +273,7 @@ And because in the onChange we need to call a function so we can save it, let's 
 Anywhere underneath the stateAdd this function: 
 
 
-```
+```js
 setNextToDo = (event) => {
  this.setState({ nextToDo: event.target.value})
 }
@@ -275,12 +287,14 @@ Now we want to write the functionality for our input box.
 Inside the render, let's add a function call to the onClick attribute.
 
 
-```onClick={this.addToDo}```
+```html
+onClick={this.addToDo}
+```
 
 
 Whenever the user clicks the button it’s going to a call a function called addToDo.
 
-```
+```js
 addToDp = (event) => 
  this.setState({
   nextToDo: '',
