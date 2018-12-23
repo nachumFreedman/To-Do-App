@@ -140,14 +140,12 @@ What do we need to see on the page so that we can add stuff to a list??
 </summary>
 <pre>
  A list
-
-
  A Button 
-
-
  An Input field
 </pre>
 </details>
+
+
 
 
 Ok so let’s get started. Underneath the Hello TLV we want to add a button, a input box and a list so that we can add to-do’s to it.
@@ -244,7 +242,7 @@ Now in our state object at the top of the file underneath the class function  (W
 
 <sub>App.js</sub>
 ```js
-toDos: ["your homework", "drink water", "light Chanukia"]
+toDos: ["your homework", "drink water", "take your dog for a walk"]
 ```
 
 
