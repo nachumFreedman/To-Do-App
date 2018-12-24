@@ -269,9 +269,10 @@ and in our render function
   render() { 
    return (
     <div>
-     <List toDos={this.state.toDos} />
+     Hello TLV
      <input/> 
      <button>submit</button>
+     <List toDos={this.state.toDos} />
     </div>
    );
   } 
@@ -440,7 +441,7 @@ render() {
    Hello TLV
    <input placeholder='Next Todo' value={this.state.nextToDo} onChange={this.setNextToDo}/> 
    <button>submit</button>
-   <List<List toDos={this.state.toDos} deleteItem={this.deleteItem}/>
+   <List toDos={this.state.toDos} deleteItem={this.deleteItem}/>
   </div>
  );
 } 
