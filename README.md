@@ -213,6 +213,7 @@ There's no such thing as a ```<List/>```
 
 <sub>If we check the browser now, we'll get an error about how List doesn't exist</sub>
 
+---
 
 So why did we do that?
 
