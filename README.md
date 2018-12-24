@@ -371,8 +371,9 @@ And inside our  ```src/List.js```  Lets add a button that will call this prop wi
 
 <sub>List.js</sub>
 ```js
-import React from 'react'
- const List = props => (
+import React from 'react';
+
+const List = props => (
   <ul>
    {
     props.toDos.map((item, index) => (
@@ -384,6 +385,7 @@ import React from 'react'
    }
  </ul>
 );
+
 export default List;
 
 ```
