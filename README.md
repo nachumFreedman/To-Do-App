@@ -261,6 +261,7 @@ import List from './List';
 ```
 
 and in our render function
+
 <sub>App.js</sub>
 ```js
 //...
