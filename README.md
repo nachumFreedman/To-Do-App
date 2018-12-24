@@ -57,7 +57,7 @@ In your text editor open folder ```home/to-do-list``` or search for to-do-list
 HTML can be described as a noun just like JavaScript can be described as a verb and CSS, the styling language can be described as an Adjective. 
 
 
-###  Meaning 
+#### Hello React
 
 
 HTML describes what will be on the page.
@@ -100,7 +100,7 @@ Please add
 
 <sub>App.js</sub>
 ```html
-<div>hello TLV</div>
+<div>hello TLV.js</div>
 ```
 
 
@@ -111,23 +111,42 @@ Inside your terminal from your project root
 
 You should see inside your browser by going to the address [localhost:3000](http://localhost:3000) just like typing in a website the text Hello TLV!
 
+----
+
+
+#### React = render( state )
 
 Congratulations on your first React App!
 
-Now that you’re all Junior React.JS developers we should learn about the state. 
-```state = {};```
+Now that you’re all Junior React.JS developers we should learn about the state.
+
+```js
+state = {}
+```
 
 
-The state is a place to keep all the information in the app that changes. The reason is because different things change from different places, you don’t always want keep in mind what is changing what... but you do want to know know exactly all the important stuff in the App. 
+`state` is a place to keep all the information in the app that changes. The reason is because different things change from different places, you don’t always want keep in mind what is changing what... but you do want to know know exactly all the important stuff in the App.
 
 
 So below the component declarations lets copy in a state with an empty list for your to-dos 
 
 <sub>App.js</sub>
 ```js
-state =  { 
- toDos: [ ],
-};
+//...
+
+class App extends Component {
+
+  // start copying here
+
+  state =  { 
+   toDos: [ ],
+  };
+
+  // end copying here
+
+  //... render function etc.
+
+}
 ```
 
 
@@ -146,12 +165,32 @@ What do we need to see on the page so that we can add stuff to a list??
 </details>
 
 
-<hr/>
-
 Ok so let’s get started. Underneath the Hello TLV we want to add a button, a input box and a list so that we can add to-do’s to it.
 
-Copy paste this: 
+Replace your entire render function with this: 
 
+
+<sub>App.js</sub>
+```html
+render() { 
+ return (
+  <div>
+   Hello TLV
+   <input/>
+   <button>submit</button>
+  </div>
+ );
+} 
+```
+
+<sub>Now in the browser, we should see our input and button! Next we'll connect them to the state</sub>
+
+---
+
+#### Using state, props
+
+
+Let's put our List in now using the `toDos` we initialized in `state` 
 
 <sub>App.js</sub>
 ```html
@@ -168,32 +207,34 @@ render() {
 ```
 
 
-
 Anyone with any experience in HTML should notice something wrong here. 
 
 There's no such thing as a ```<List/>```
 
-
-That’s because in react we use components to split apart our code and make it way more readable.
-
-
-Great, now if we’ve done this properly the browser should be giving us an error
+<sub>If we check the browser now, we'll get an error about how List doesn't exist</sub>
 
 
-Let’s fix that.
+So why did we do that?
+
+
+That’s because in react we use components to split apart our code and make it waaaaaaaaay more readable.
+
+
+Let’s fix that error already!
 
 
 Everyone create a new file inside the ```src``` of the project so ```src/List.js``` 
 In your finder or where ever you are most comfortable creating files go to code/to-do-list 
 
 
-Inside this file we’re going to write the list setup!
+Inside this file we’re going to write the List render!
 
 
 <sub>List.js</sub>
 ```js
 import React from 'react';
- const List = props => (
+
+const List = props => (
   <ul>
    {
     props.toDos.map((item, index) => (
@@ -203,27 +244,23 @@ import React from 'react';
     ))
    }
   </ul>
- );
+);
+
 export default List;
 ```
 
 This will allow us to render as many to-do items as we want because it maps over all the “toDos” in our state and makes a new list item for each one.
 
 
-We do need to import this new “component” to our ```src/App.js```  by putting this line at the top of the ```src/App.js```  file. So go to ```App.js``` and at the top of the file.
-
-```import List from './List';```
-
-
-Anyone who has experience in Javascript should be wondering what “props” is and rightly so.
-One reason is because we haven’t even passed it any “props” and the other is what does props mean?
-
-Props simply means properties and we can pass it whichever properties we want when we call our new component, so in our src/App.js lets pass it the necessary props so that we can get it to print some “List Items” or ```<li>Items</li>``` on the page.
-
-
+We do need to import this new “component” to our ```src/App.js```  by putting this line at the top of the ```src/App.js```  file. So go to ```App.js``` and at the top of the file with the other import statements add
 
 <sub>App.js</sub>
-```html
+```js
+import List from './List';
+```
+
+and in our render function
+<sub>App.js</sub>
 render() { 
  return (
   <div>
@@ -234,10 +271,28 @@ render() {
   </div>
  );
 } 
+```js
+//...
+
+  render() { 
+   return (
+    <div>
+     <List toDos={this.state.toDos} />
+     <input/> 
+     <button>submit</button>
+    </div>
+   );
+  } 
+//...
 ```
 
-Now in our state object at the top of the file underneath the class function  (WHERE IS STATE) lets add a few toDos’ so we can see it working… 
+<sub>Now in our browser, we should see the render working again... let's add some items to the list next to see the render!</sub>
 
+---
+
+#### Rendering our todos
+
+Now in our state object at the top of the file underneath the class function  (WHERE IS STATE) lets add a few toDos’ so we can see it working… 
 
 
 <sub>App.js</sub>
@@ -245,9 +300,57 @@ Now in our state object at the top of the file underneath the class function  (W
 toDos: ["your homework", "drink water", "take your dog for a walk"]
 ```
 
+Great! We have a working List!
 
 
-Great!
+Anyone who has experience in Javascript should be wondering what “props” is and rightly so.
+One reason is because we haven’t even passed it any “props” and the other is what does props mean?
+
+Props simply means properties and we can pass it whichever properties we want when we call our new component, so in our src/App.js lets pass it the necessary props so that we can get it to print some “List Items” or ```<li>Items</li>``` on the page.
+
+
+#### intermezzo for CSS
+
+Let's write a bit of CSS to make our list look nice
+
+<sub>App.css</sub>
+```css
+//... default css... can leave it where it is
+
+ul {
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  max-width: 50vw;
+  margin: 0 auto;
+  list-style: none;
+}
+
+li {
+  padding: 3px;
+  background-color: #eee;
+}
+
+li:nth-child(even){
+  background-color: #ded;
+}
+
+li:hover {
+  background-color: #ddd;
+}
+
+input {
+  margin: 10px;
+}
+
+```
+
+<sub>now isn't that better? next we'll be deleting todos</sub>
+
+----
+
+
+#### button onClick to delete todo
 
 
 Let’s quickly add a done button so we can remove items from the list.
@@ -307,6 +410,28 @@ deleteItem = (index) =>
 This function will go through the toDos in our state and filter each one to find the index (location in the list) and when it finds the to do with the same index as the one we pass to the function on the button it will filter it out of the list.  (in the real world, we’d likely have item.id to filter by… this “index” might break if we have sorting on the List.items)
 
 
+and to finish the task, let's float the button over to tthe side of the list item
+
+
+<sub>App.css</sub>
+```css
+//...
+
+/* we'll use this in a minute when we put a button on our li */
+li button {
+  float: right;
+}
+```
+
+<sub>great, now we can delete items! let's get adding items working next</sub>
+
+---
+
+
+#### adding todos (input box)
+
+
+
 Now let’s get that input field working.. To explain we have an input field and we need to take the value the user adds and save that somewhere. When the user clicks the submit button we can add our value to our list of toDos in the state and React can render it all out onto our page. 
 
 
@@ -320,7 +445,7 @@ render() {
  return (
   <div>
    Hello TLV
-   <input value={this.state.nextToDo} onChange={this.setNextToDo}/> 
+   <input placeholder='Next Todo' value={this.state.nextToDo} onChange={this.setNextToDo}/> 
    <button>submit</button>
    <List<List toDos={this.state.toDos} deleteItem={this.deleteItem}/>
   </div>
@@ -329,28 +454,47 @@ render() {
 ```
 
 
-And a field called nexToDo to our state, this will be the place we’re going to save the users input text until he/she is ready to submit it to the page. 
+And a field called nextToDo to our state, this will be the place we’re going to save the users input text until he/she is ready to submit it to the page. 
 
 
 So let’s add a field called nextToDo on the state object at the top of our src/app.js so that we can save our users input. 
 
 
+<sub>App.js</sub>
+```js
+state = {
+  todos: ['cook', 'eat', 'nap'],
+  nextToDo: '',
+}
+//...
+```
+
 And because in the onChange we need to call a function so we can save it, let's add this function to the app
-Anywhere underneath the stateAdd this function: 
+Anywhere underneath the state (inside the class)
+
+Add this function: 
 
 
 <sub>App.js</sub>
 ```js
 setNextToDo = (event) => {
-  this.setState({ nextToDo: event.target.value})
+  this.setState({ nextToDo: event.target.value })
 }
 ```
 
 
-Every time the user writes anything in the ```input``` box this function will take the value of the input and save it to our state.nexToDo
+Every time the user writes anything in the ```input``` box this function will take the value of the input and save it to our state.nextToDo
+
+
+<sub>now we can see the input box working again... let's make our button work next</sub>
+
+---
+
+#### finally... adding a todo
 
 
 Now we want to write the functionality for our input box.
+
 Inside the render, let's add a function call to the onClick attribute.
 
 
@@ -362,10 +506,12 @@ Inside the render, let's add a function call to the onClick attribute.
 
 Whenever the user clicks the button it’s going to a call a function called addToDo.
 
+The addToDo function will put `state.nextToDo` on the end of `state.toDos` and clear the input box
+
 
 <sub>App.js</sub>
 ```js
-addToDp = (event) => 
+addToDo = (event) => 
  this.setState({
   nextToDo: '',
   toDos: [... this.state.toDos, this.state.nextToDo]
@@ -376,6 +522,13 @@ This function can go on top of the render function that we have inside the app
 
 
 This function will take the nextToDo that we added whenever the user types into the input, and append it to the end of the current toDos in the state.
+
+
+---
+
+great!. we had a lot of fun puttin g that together eh?
+
+
 
 
 The problem with vanilla was that state was all over the place and our HTML and JS got mixed together…
