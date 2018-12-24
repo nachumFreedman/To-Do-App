@@ -262,16 +262,6 @@ import List from './List';
 
 and in our render function
 <sub>App.js</sub>
-render() { 
- return (
-  <div>
-   Hello TLV
-   <input/> 
-   <button>submit</button>
-   <List toDos={this.state.toDos} />
-  </div>
- );
-} 
 ```js
 //...
 
