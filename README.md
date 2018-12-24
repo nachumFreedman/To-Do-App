@@ -411,7 +411,6 @@ and to finish the task, let's float the button over to tthe side of the list ite
 ```css
 //...
 
-/* we'll use this in a minute when we put a button on our li */
 li button {
   float: right;
 }
